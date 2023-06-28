@@ -1,3 +1,3 @@
-# molslice
+# md-challenge
 
-A new Flutter project.
+A simple game to guess optimal processors for parallelizing molecular dynamics simulations.
