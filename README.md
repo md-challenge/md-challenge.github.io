@@ -1,4 +1,13 @@
-# md-challenge
+# MD-challenge
 
 A simple game to guess optimal processors for parallelizing molecular dynamics simulations.
-command: flutter build web --release
+
+## How to build localy
+
+```bash
+flutter build web --release
+```
+
+## Licence
+
+GNU General Public License v3.0
