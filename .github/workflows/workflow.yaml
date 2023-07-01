@@ -28,8 +28,8 @@ jobs:
       run: |
         cd build/web
         git init
-        git config user.name  "Vishnu"
-        git config user.email "vishnuprasadk@alumni.iitm.ac.in"
+        git config user.name  "Vishnmd-challenge"
+        git config user.email "md-challenge@proton.me"
         git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/md-challenge/md-challenge.github.io.git
         git checkout -b gh-pages
         git add .
