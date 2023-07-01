@@ -30,7 +30,7 @@ jobs:
         git init
         git config user.name  "Vishnu"
         git config user.email "vishnuprasadk@alumni.iitm.ac.in"
-        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/md-challenge/md-challenge.girhub.io.git
+        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/md-challenge/md-challenge.github.io.git
         git checkout -b gh-pages
         git add .
         git commit -m "Updated docs"
