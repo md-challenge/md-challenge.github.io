@@ -14,19 +14,19 @@ jobs:
         channel: 'beta' # Currently you have to use beta channel for Flutter web.
     - name: Upgrades flutter
       run: flutter upgrade
-      working-directory: .
+      working-directory: ./web_app/
     - name: Enable Web
       run: flutter config --enable-web
       working-directory: .
     - name: Install dependencies
       run: flutter packages get
-      working-directory: .
+      working-directory: ./web_app/
     - name: Build Web
       run: flutter build web --release
-      working-directory: .
+      working-directory: ./web_app/
     - name: Deploy
       run: |
-        cd build/web
+        cd web_app/build/web
         git init
         git config user.name  "md-challenge"
         git config user.email "md-challenge@proton.me"
