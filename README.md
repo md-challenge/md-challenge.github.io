@@ -1,6 +1,6 @@
 # MD-challenge
 
-A simple game to guess optimal processors for parallelizing molecular dynamics simulations.
+A simple [game](https://md-challenge.github.io/) to guess optimal processors for parallelizing molecular dynamics simulations.
 
 ## How to build localy
 
