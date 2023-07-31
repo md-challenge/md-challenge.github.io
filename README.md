@@ -4,6 +4,8 @@ A simple [game](https://md-challenge.github.io/) to guess optimal processors for
 
 ## How to build localy
 
+From the web_app/ folder, type:
+
 ```bash
 flutter build web --release
 ```
