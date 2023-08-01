@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:molslice/models/footer.dart';
 import 'system.dart';
 import 'q_n_a.dart';
 
@@ -10,12 +11,17 @@ class Panels extends StatelessWidget {
     return const SizedBox(
       // height: MediaQuery.of(context).size.height * 0.9,
       child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Expanded(flex: 1, child: System()),
-            Expanded(flex: 1, child: QnA())
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(flex: 1, child: System()),
+                Expanded(flex: 1, child: QnA())
+              ],
+            ),
+            Footer()
           ],
         ),
       ),

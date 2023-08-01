@@ -6,8 +6,8 @@ import 'models/web_app_bar.dart';
 import 'models/app_drawer.dart';
 import 'models/panels.dart';
 import 'package:provider/provider.dart';
-import 'models/copyright.dart';
-import 'models/dark_mode.dart';
+// import 'models/copyright.dart';
+// import 'models/dark_mode.dart';
 
 class MolSlice extends StatefulWidget {
   const MolSlice({super.key});
@@ -46,14 +46,14 @@ class _MolSliceState extends State<MolSlice> {
           ),
           endDrawer: const AppDrawer(),
           body: const Panels(),
-          persistentFooterButtons: <Widget>[
-            SizedBox(
-              height: 25.0,
-              width: MediaQuery.of(context).size.width * 0.95,
-              child: const CopyRight(),
-            ),
-            const DarkMode(),
-          ],
+          // persistentFooterButtons: <Widget>[
+          //   SizedBox(
+          //     height: 25.0,
+          //     width: MediaQuery.of(context).size.width * 0.95,
+          //     child: const CopyRight(),
+          //   ),
+          //   const DarkMode(),
+          // ],
         ),
         theme: getTheme(valueProviderTheme.darkBool),
       );

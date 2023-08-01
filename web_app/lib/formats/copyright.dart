@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class CopyRightData {
   static const _titleAlignment = TextAlign.center;
   static const padding = 0.0;
-  static const _fontSize = 20.0;
+  static const _fontSize = 15.0;
   static const _fontFamily = 'providence';
 
   static RichText createCopyright(BuildContext context) {

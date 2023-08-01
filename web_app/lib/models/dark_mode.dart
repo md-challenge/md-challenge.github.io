@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 class DarkMode extends StatelessWidget {
   const DarkMode({super.key});
-  static const double _size = 20.0;
+  static const double _size = 15.0;
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ class CopyRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CopyRightData.createCopyright(context),
       ],

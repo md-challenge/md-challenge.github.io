@@ -20,7 +20,7 @@ class _QstackState extends State<Qstack> {
       builder: (context, valueProviderQstack, child) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: makeQstack(MediaQuery.of(context).size.height * 0.05),
         );
       },
