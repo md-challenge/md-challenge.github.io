@@ -2,9 +2,9 @@
 
 A simple [game](https://md-challenge.github.io/) to guess optimal processors for parallelizing molecular dynamics simulations.
 
-## How to build localy
+## How to build locally
 
-From the web_app/ folder, type:
+From the [web_app/](web_app/) folder, type:
 
 ```bash
 flutter build web --release
