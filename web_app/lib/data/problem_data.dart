@@ -28,7 +28,7 @@ class ProblemData {
 List<ProblemData> dataList = [
   ProblemData(
       problemNumber: 0,
-      sysImageURL: '../../../simulation_data/case_1/system.png',
+      sysImageURL: 'https://raw.githubusercontent.com/md-challenge/md-challenge.github.io/master/simulation_data/case_1/system.png',
       nMols: 500, // Number of Molecules
       xLen: 50.0, // X-Length of the system
       yLen: 50.0, // Y-Length of the system
