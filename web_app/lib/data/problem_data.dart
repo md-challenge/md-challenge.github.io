@@ -29,9 +29,9 @@ List<ProblemData> dataList = [
   ProblemData(
       problemNumber: 0,
       sysImageURL: 'https://raw.githubusercontent.com/md-challenge/md-challenge.github.io/master/simulation_data/case_1/system.png',
-      nMols: 500, // Number of Molecules
-      xLen: 50.0, // X-Length of the system
-      yLen: 50.0, // Y-Length of the system
+      nMols: 50, // Number of Atoms
+      xLen: 100.0, // X-Length of the system
+      yLen: 100.0, // Y-Length of the system
       optimalProc: 4,
       optimalXcount: 2,
       optimalYcount: 2,
