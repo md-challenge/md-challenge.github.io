@@ -10,6 +10,6 @@ From the [web_app/](web_app/) folder, type:
 flutter build web --release
 ```
 
-## Licence
+## License
 
 GNU General Public License v3.0
