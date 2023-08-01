@@ -37,6 +37,7 @@ class _MolSliceState extends State<MolSlice> {
   Widget build(BuildContext context) {
     return Consumer<AppProvider>(builder: (context, valueProviderTheme, child) {
       return MaterialApp(
+        title: 'Md-Proc Challenge: Optimize Molecular Dynamics Parallelization',
         home: Scaffold(
           appBar: PreferredSize(
             preferredSize:
