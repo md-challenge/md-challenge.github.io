@@ -17,8 +17,8 @@ class Footer extends StatelessWidget {
           DarkMode(),
           Spacer(),
           CopyRight(),
-          Spacer(),
-          DialogExample()
+          // Spacer(),
+          // DialogExample()
         ],
       ),
     );
