@@ -12,6 +12,7 @@ dependencies:
   provider:
   url_launcher:
   flutter_linkify:
+  flutter_markdown:
 
 dev_dependencies:
   flutter_test:

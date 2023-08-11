@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:molslice/app_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:molslice/formats/drawer.dart';
+import 'package:molslice/formats/drawer_mobile.dart';
 // import 'package:molslice/models/about_dialogue.dart';
 
-class AppDrawer extends StatefulWidget {
-  const AppDrawer({super.key});
+class MobileAppDrawer extends StatefulWidget {
+  const MobileAppDrawer({super.key});
 
   @override
-  State<AppDrawer> createState() => _AppDrawerState();
+  State<MobileAppDrawer> createState() => _AppDrawerState();
 }
 
-class _AppDrawerState extends State<AppDrawer> {
+class _AppDrawerState extends State<MobileAppDrawer> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AppProvider>(
       builder: (context, valueProvider, child) {
         return SizedBox(
-          width: MediaQuery.of(context).size.width * 0.15,
+          width: MediaQuery.of(context).size.width * 0.35,
           child: Drawer(
             child: ListView(
               padding: EdgeInsets.zero,

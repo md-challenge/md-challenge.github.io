@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:molslice/app_provider.dart';
 import 'package:provider/provider.dart';
-import 'case_header.dart';
+import 'case_header_mobile.dart';
 import '../data/problem_data.dart';
-import 'image_stack_2.dart';
-import 'system_description.dart';
-import 'next_button.dart';
+import 'image_stack_mobile.dart';
+import 'system_description_mobile.dart';
 
 class System extends StatefulWidget {
   const System({super.key});
@@ -21,17 +20,17 @@ class _SystemState extends State<System> {
       builder: (context, valueProviderSystem, child) {
         return Padding(
           padding: EdgeInsets.fromLTRB(
-              MediaQuery.of(context).size.width * 0.5 * 0.1,
-              MediaQuery.of(context).size.height * 0.8 * 0.1,
-              MediaQuery.of(context).size.width * 0.5 * 0.15,
+              MediaQuery.of(context).size.width * 0.5 * 0.0,
+              MediaQuery.of(context).size.height * 0.8 * 0.0,
+              MediaQuery.of(context).size.width * 0.5 * 0.0,
               MediaQuery.of(context).size.height * 0.8 * 0.05),
           child: SizedBox(
-            width: MediaQuery.of(context).size.width / 2.0,
+            width: MediaQuery.of(context).size.width * 0.8,
+            // height: MediaQuery.of(context).size.height * 0.4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                CaseHeading(problemNumber: valueProviderSystem.problemNumber),
                 ImageStack(
                     systemURL:
                         dataList[valueProviderSystem.problemNumber].sysImageURL,
@@ -39,9 +38,9 @@ class _SystemState extends State<System> {
                     divY: valueProviderSystem.divCountY,
                     overlayBool: valueProviderSystem.divOverlayBool,
                     divColor: valueProviderSystem.divColor),
+                CaseHeading(problemNumber: valueProviderSystem.problemNumber),
                 SysDescription(
                     problemNumber: valueProviderSystem.problemNumber),
-                const NextButton()
               ],
             ),
           ),
