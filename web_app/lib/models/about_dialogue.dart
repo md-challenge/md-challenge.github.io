@@ -37,7 +37,7 @@ class DialogExample extends StatelessWidget {
                 size: 15.0,
                 color: Theme.of(context).colorScheme.onBackground,
               )),
-              TextSpan(text: ' & About', style: AboutData.buttonStyle(context)),
+              TextSpan(text: ' About', style: AboutData.buttonStyle(context)),
             ]))));
   }
 }

@@ -54,7 +54,7 @@ class AboutData {
   static const String _markdownData = '''
 ## Created by [Vishnu Prasad Kurupuath](https://vishnu-prasad-kurupath.github.io) and [Simon Gravelle](https://simongravelle.github.io) (c) 2023 using [Flutter](https://flutter.dev)
 
-The source code of this website is available as per MIT License.
+The source code of this website is available as per GNU Public License v3.0.
 
 You may provide support to this project (and the planet) through 
 [Treeware](https://treeware.earth/) 
