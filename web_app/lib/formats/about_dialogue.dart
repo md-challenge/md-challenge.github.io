@@ -56,9 +56,6 @@ class AboutData {
 
 The source code of this website is available as per GNU Public License v3.0.
 
-You may provide support to this project (and the planet) through 
-[Treeware](https://treeware.earth/) 
-
 ---
 
 ## Vote of thanks for Flutter Code:
