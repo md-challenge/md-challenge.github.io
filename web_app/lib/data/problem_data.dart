@@ -1,6 +1,7 @@
 class ProblemData {
   int problemNumber;
   String sysImageURL;
+  String sysImageURL_dark;
   int nMols;
   double xLen;
   double yLen;
@@ -14,6 +15,7 @@ class ProblemData {
   ProblemData(
       {this.problemNumber = 0,
       this.sysImageURL = 'none',
+      this.sysImageURL_dark = 'none',
       this.nMols = 0,
       this.xLen = 0.0,
       this.yLen = 0.0,
@@ -28,7 +30,10 @@ class ProblemData {
 List<ProblemData> dataList = [
   ProblemData(
       problemNumber: 0,
-      sysImageURL: 'https://raw.githubusercontent.com/md-challenge/md-challenge.github.io/master/simulation_data/case_1/system.png',
+      sysImageURL:
+          'https://raw.githubusercontent.com/md-challenge/md-challenge.github.io/master/simulation_data/case_1/snapshot_system/system-light.png',
+      sysImageURL_dark:
+          'https://raw.githubusercontent.com/md-challenge/md-challenge.github.io/master/simulation_data/case_1/snapshot_system/system-dark.png',
       nMols: 50, // Number of Atoms
       xLen: 100.0, // X-Length of the system
       yLen: 100.0, // Y-Length of the system
