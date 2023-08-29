@@ -33,12 +33,15 @@ class _SystemState extends State<System> {
               children: <Widget>[
                 CaseHeading(problemNumber: valueProviderSystem.problemNumber),
                 ImageStack(
-                    systemURL:
-                        dataList[valueProviderSystem.problemNumber].sysImageURL,
+                    systemURL: valueProviderSystem.darkBool
+                        ? dataList[valueProviderSystem.problemNumber]
+                            .sysImageURLDark
+                        : dataList[valueProviderSystem.problemNumber]
+                            .sysImageURL,
                     divX: valueProviderSystem.divCountX,
                     divY: valueProviderSystem.divCountY,
                     overlayBool: valueProviderSystem.divOverlayBool,
-                    divColor: valueProviderSystem.divColor),
+                    divColor: Theme.of(context).colorScheme.onBackground),
                 SysDescription(
                     problemNumber: valueProviderSystem.problemNumber),
                 const NextButton()

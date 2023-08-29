@@ -32,12 +32,15 @@ class _SystemState extends State<System> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 ImageStack(
-                    systemURL:
-                        dataList[valueProviderSystem.problemNumber].sysImageURL,
+                    systemURL: valueProviderSystem.darkBool
+                        ? dataList[valueProviderSystem.problemNumber]
+                            .sysImageURLDark
+                        : dataList[valueProviderSystem.problemNumber]
+                            .sysImageURL,
                     divX: valueProviderSystem.divCountX,
                     divY: valueProviderSystem.divCountY,
                     overlayBool: valueProviderSystem.divOverlayBool,
-                    divColor: valueProviderSystem.divColor),
+                    divColor: Theme.of(context).colorScheme.onBackground),
                 CaseHeading(problemNumber: valueProviderSystem.problemNumber),
                 SysDescription(
                     problemNumber: valueProviderSystem.problemNumber),
