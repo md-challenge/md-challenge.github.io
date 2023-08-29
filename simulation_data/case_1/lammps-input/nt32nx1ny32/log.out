@@ -1,0 +1,59 @@
+LAMMPS (8 Feb 2023)
+Reading data file ...
+  orthogonal box = (-50 -50 -1) to (50 50 1)
+  8 by 4 by 1 MPI processor grid
+  reading atoms ...
+  100 atoms
+  reading velocities ...
+  100 velocities
+  read_data CPU = 0.015 seconds
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 72 72 2
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/2d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.005
+Per MPI rank memory allocation (min/avg/max) = 2.923 | 3.044 | 3.048 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   1             -0.04332382     0              0.94667618     0.010296183  
+     20000   1.0330092     -0.023143052    0              0.9995361      0.0097264173 
+Loop time of 0.836211 on 32 procs for 20000 steps with 100 atoms
+
+Performance: 10332323.778 tau/day, 23917.416 timesteps/s, 2.392 Matom-step/s
+99.3% CPU use with 32 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0024531  | 0.002962   | 0.0037281  |   0.6 |  0.35
+Neigh   | 0.0010466  | 0.0014179  | 0.0019616  |   0.6 |  0.17
+Comm    | 0.099165   | 0.19533    | 0.25543    |   9.3 | 23.36
+Output  | 6.3907e-05 | 6.8465e-05 | 0.00017905 |   0.0 |  0.01
+Modify  | 0.41537    | 0.47534    | 0.57295    |   6.0 | 56.84
+Other   |            | 0.1611     |            |       | 19.26
+
+Nlocal:          3.125 ave           5 max           0 min
+Histogram: 1 0 4 0 6 0 7 0 7 7
+Nghost:        2.03125 ave           4 max           0 min
+Histogram: 3 0 9 0 0 8 0 8 0 4
+Neighs:         0.3125 ave           2 max           0 min
+Histogram: 23 0 0 0 0 8 0 0 0 1
+
+Total # of neighbors = 10
+Ave neighs/atom = 0.1
+Neighbor list builds = 1850
+Dangerous builds = 0
+System init for write_data ...
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Total wall time: 0:00:00

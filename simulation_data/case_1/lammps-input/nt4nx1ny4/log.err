@@ -1,0 +1,8 @@
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   dahu143
+  Local device: hfi1_0
+--------------------------------------------------------------------------
+[dahu143:1549774] 3 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+[dahu143:1549774] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

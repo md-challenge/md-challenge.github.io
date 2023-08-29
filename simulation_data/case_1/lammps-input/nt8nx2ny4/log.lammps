@@ -1,0 +1,89 @@
+LAMMPS (8 Feb 2023)
+# this script is inspired from lammpstutorials.github.io's first tutorial
+
+include processors.lammps
+variable nx equal 2
+variable ny equal 4
+
+units lj
+dimension 2
+atom_style atomic
+pair_style lj/cut 2.5
+boundary p p p
+
+# uncomment to re-create the system
+# region simulation_box block -50 50 -50 50 -1 1
+# create_box 1 simulation_box
+# create_atoms 1 random 100 341341 simulation_box overlap 2 maxtry 10
+# mass 1 1
+# pair_coeff 1 1 1.0 1.0
+
+read_data topology.data
+Reading data file ...
+  orthogonal box = (-50 -50 -1) to (50 50 1)
+  4 by 2 by 1 MPI processor grid
+  reading atoms ...
+  100 atoms
+  reading velocities ...
+  100 velocities
+  read_data CPU = 0.009 seconds
+
+#thermo 1000
+#dump mydmp all atom 1000 dump.lammpstrj
+
+velocity all create 1.0 4928459 mom yes rot yes dist gaussian
+fix mynve all nve
+fix mylgv all langevin 1.0 1.0 0.1 1530917 zero yes
+fix myenf all enforce2d
+
+timestep 0.005
+
+run 20000
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 72 72 2
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/2d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 3.05 | 3.05 | 3.05 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   1             -0.04332382     0              0.94667618     0.010296183  
+     20000   1.1083722     -0.059499929    0              1.0377886      0.01001373   
+Loop time of 0.282628 on 8 procs for 20000 steps with 100 atoms
+
+Performance: 30570177.476 tau/day, 70764.300 timesteps/s, 7.076 Matom-step/s
+100.0% CPU use with 8 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0019476  | 0.0027845  | 0.0039226  |   1.4 |  0.99
+Neigh   | 0.001811   | 0.0025463  | 0.0032638  |   1.0 |  0.90
+Comm    | 0.097442   | 0.11456    | 0.12512    |   2.4 | 40.53
+Output  | 1.9841e-05 | 2.1302e-05 | 2.9791e-05 |   0.0 |  0.01
+Modify  | 0.1083     | 0.11974    | 0.13727    |   2.4 | 42.37
+Other   |            | 0.04297    |            |       | 15.20
+
+Nlocal:           12.5 ave          21 max           6 min
+Histogram: 2 0 2 0 0 1 2 0 0 1
+Nghost:            4.5 ave           6 max           3 min
+Histogram: 2 0 0 1 0 0 4 0 0 1
+Neighs:           1.75 ave           7 max           0 min
+Histogram: 2 4 0 0 1 0 0 0 0 1
+
+Total # of neighbors = 14
+Ave neighs/atom = 0.14
+Neighbor list builds = 1860
+Dangerous builds = 0
+
+write_data topology.data
+System init for write_data ...
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Total wall time: 0:00:00
