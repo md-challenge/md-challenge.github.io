@@ -4,8 +4,10 @@ export LC_NUMERIC="en_US.UTF-8"
 
 set -e
 
-python3 generate-data.py
+# First: generate the possible processor configurations
+python3 generate-possible-configurations.py
 
+# Create the bash script for maunching all simulations at once
 if [ -f launch-all.sh ] 
 then
     rm launch-all.sh
@@ -14,25 +16,11 @@ touch  launch-all.sh
 echo "#!/bin/bash" >> launch-all.sh
 echo " " >> launch-all.sh
 
-
+# Loop over all possible processor combinations
 while read nt nx ny; 
 do
 
-    if [ -f slurm.sh ] 
-    then
-        rm slurm.sh
-    fi
-    touch  slurm.sh
-    echo "#!/bin/bash" >> slurm.sh
-    echo "#OAR -n scaling-test" >> slurm.sh
-    #echo "#OAR -l /nodes=1/cpu=1/core="${nt}",walltime=00:10:00" >> slurm.sh
-    echo "#OAR -l /core="${nt}",walltime=00:10:00" >> slurm.sh
-    echo "#OAR --stdout log.out" >> slurm.sh
-    echo "#OAR --stderr log.err" >> slurm.sh
-    echo "" >> slurm.sh
-    echo "mpirun -np "${nt}" /home/gravells/softwares/lammps-8Feb2023/src/lmp_mpi -in input.lammps" >> slurm.sh
-    chmod +x slurm.sh
-
+    # Create the processors commands file
     if [ -f processors.lammps ] 
     then
         rm processors.lammps
@@ -41,19 +29,26 @@ do
     echo "variable nx equal "${nx} >> processors.lammps
     echo "variable ny equal "${ny} >> processors.lammps
 
+    # Create the folder
     folder=nt${nt}nx${nx}ny${ny}
-    if [ ! -d $folder ] 
+    if [ ! -d '../'$folder ] 
     then
-        mkdir $folder
+        mkdir '../'$folder
     fi
 
-    cp slurm.sh input.lammps processors.lammps topology.data $folder
-    scp -r $folder gravells@cargo.univ-grenoble-alpes.fr:/bettik/gravells/2D-LennardJones-N400/
+    # Copy the relevant files into the folder
+    cp input.lammps processors.lammps topology.data '../'$folder
     
     echo "cd "$folder >> launch-all.sh
-    echo "oarsub -S ./slurm.sh --project tamtam" >> launch-all.sh
+    echo "mpirun -np "${nt}" /home/simon/Softwares/lammps-2Aug2023/src/lmp_mpi -in input.lammps" >> launch-all.sh
     echo "cd .." >> launch-all.sh
 
 done < possible_combination.dat
 
-scp ./launch-all.sh gravells@cargo.univ-grenoble-alpes.fr:/bettik/gravells/2D-LennardJones-N400/
+mv launch-all.sh ../
+
+# Clean unecessary files
+if [ -f possible_combination.dat ] 
+then
+    rm possible_combination.dat
+fi

@@ -1,0 +1,32 @@
+# this script is inspired from lammpstutorials.github.io's first tutorial
+
+include processors.lammps
+
+units lj
+dimension 2
+atom_style atomic
+pair_style lj/cut 2.5
+boundary p p p
+
+# uncomment to re-create the system
+#region simulation_box block -50 50 -50 50 -1 1
+#create_box 1 simulation_box
+#create_atoms 1 random 100 341341 simulation_box overlap 2 maxtry 10
+#mass 1 1
+#pair_coeff 1 1 1.0 1.0
+
+read_data topology.data
+
+#thermo 1000
+#dump mydmp all atom 10 dump.lammpstrj
+
+velocity all create 1.0 4928459 mom yes rot yes dist gaussian
+fix mynve all nve
+fix mylgv all langevin 1.0 1.0 0.1 1530917 zero yes
+fix myenf all enforce2d
+
+timestep 0.005
+
+run 20000
+
+# write_data topology.data
