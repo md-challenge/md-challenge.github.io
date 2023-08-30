@@ -46,9 +46,3 @@ do
 done < possible_combination.dat
 
 mv launch-all.sh ../
-
-# Clean unecessary files
-if [ -f possible_combination.dat ] 
-then
-    rm possible_combination.dat
-fi
