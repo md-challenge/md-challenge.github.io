@@ -32,6 +32,7 @@ web_app/.flutter-plugins-dependencies
 .pub/
 web_app/build/
 thoughts/
+web_app_2
 
 # Symbolication related
 app.*.symbols
